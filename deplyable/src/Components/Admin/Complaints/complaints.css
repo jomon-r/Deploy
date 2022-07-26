@@ -1,0 +1,9 @@
+button{
+    background-color: aqua;
+}
+table, th, td {
+    border: 1px solid;
+  }
+  th, td {
+    padding: 2px;
+  }
