@@ -1,0 +1,29 @@
+.mits-navbar{
+  margin-left:0;
+  height:50px;
+  width:140px;
+  margin-top: 10px;
+  padding-right: 20px;
+}
+.adhorizontal-navbar{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  width: 100%;
+  height: 7%;
+}
+.adbutton-navbar{
+  height:50px;
+  width: 120px;
+  color:beige;
+  background-color: blue;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+.adnavbar-link{
+  margin-left: 7px;
+  padding-right: 7px;
+  margin-top: 15px;
+}

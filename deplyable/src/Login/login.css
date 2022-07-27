@@ -1,4 +1,4 @@
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -115,4 +115,4 @@ form .form-login  input[type="submit"]:hover{
   margin-left: 280px;
   text-align:center;
   font-size: 45px;
-} */
+}

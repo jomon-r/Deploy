@@ -137,7 +137,7 @@ const makeid = (dep) => {
  // This following section will display the form that takes the input from the user.
  return (
    <div>
-    {/* <Navbar/> */}
+    <Navbar/>
     <Link to="/Details" >View all Facilities</Link>
    
 

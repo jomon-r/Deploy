@@ -1,42 +1,24 @@
 import mits from '../../../mits.png'
 import React from 'react';
-import {
-    Nav,
-    NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink
-  } from './NavbarElements';
-  
+import './navbar.css'
 import Logout from '../../../Login/Login';
+import { Link } from 'react-router-dom';
 const NavbarF = () => {
  
     return (
         <>
-        <Nav>
-        <NavLink to="/HomeF">
-          <h1><img src={mits} alt="mits" style={{marginLeft:0,height:'50px',width:'120px'}}/></h1>
-          <Bars/>
-          <NavMenu>
-          <NavLink to="/HomeF" activeStyle>
-              Home
-            </NavLink>
-           
-            <NavLink to="/OccupancyF" activeStyle>
-              Check Occupancy
-            </NavLink>
-            <NavLink to="/ComplaintsF" activeStyle>
-              Complaints
-            </NavLink>
-            
-            <NavBtn>
-                <NavBtnLink onSubmit={Logout()} to ="/">Sign Out</NavBtnLink>
-             </NavBtn>
-          </NavMenu>
-          </NavLink>
-      </Nav>
-    </>
+        <div className='horizontal-navbar'>
+          <Link to='/HomeF'>
+            <h1><img src={mits} alt="mits" className='mits-navbar'/></h1>
+          </Link>
+          <Link to='/HomeF'><h4 className='navbar-link'>QR Scanner</h4></Link>
+          <Link to='/OccupancyF'><h4 className='navbar-link'>Schedule Halls</h4></Link>
+          <Link to='/ComplaintsF'><h4 className='navbar-link'>File Complaints</h4></Link>
+          <Link to='/'><button onClick={Logout} className='button-navbar'>Sign Out</button></Link>
+
+
+        </div>
+       </>
     );
 };
 

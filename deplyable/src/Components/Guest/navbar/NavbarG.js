@@ -1,43 +1,39 @@
 import mits from '../../../mits.png'
 import React from 'react';
-import {
-    Nav,
-    NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink
-  } from './NavbarElements';
-  
+import './navbar.css'
 import Logout from '../../../Login/Login';
+import { Link } from 'react-router-dom';
 const NavbarG = () => {
  
     return (
         <>
-        <Nav>
-        <NavLink to="/HomeG">
-          <h1><img src={mits} alt="mits" style={{marginLeft:0,height:'50px',width:'120px'}}/></h1>
-          <Bars/>
-          <NavMenu>
-          <NavLink to="/HomeG" activeStyle>
-              Home
-            </NavLink>
-           
+        <div className='ghorizontal-navbar'>
+          <Link to='/HomeG'>
+            <h1><img src={mits} alt="mits" className='mits-navbar'/></h1>
+          </Link>
          
-            <NavLink to="/KeyRequest" activeStyle>
-              Request Key
-            </NavLink>
-            <NavLink to="/SchedulesG" activeStyle>
-              View Schedules
-            </NavLink>
-            <NavBtn>
-                <NavBtnLink onSubmit={Logout()} to ="/">Sign Out</NavBtnLink>
-             </NavBtn>
-          </NavMenu>
-          </NavLink>
-      </Nav>
-    </>
+          <Link to='/HomeG'><h4 className='gnavbar-link'>Scan QR Code</h4></Link>
+          <Link to='/KeyRequest'><h4 className='gnavbar-link'>Request Key</h4></Link>
+          
+          <Link to='/SchedulesG'><h4 className='gnavbar-link'>View Schedules</h4></Link>
+          
+
+          
+
+
+
+          <Link to='/'><button onClick={Logout} className='gbutton-navbar'>Sign Out</button></Link>
+
+
+        </div>
+       </>
     );
 };
 
 export default NavbarG;
+
+
+
+
+
+

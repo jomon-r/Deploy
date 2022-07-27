@@ -1,52 +1,37 @@
 import mits from '../../../mits.png'
 import React from 'react';
-import {
-    Nav,
-    NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink
-  } from './NavbarElements';
-  
-
+import './navbar.css'
+import Logout from '../../../Login/Login';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
+ 
     return (
         <>
-        <Nav>
-        <NavLink to="/Home">
-          <h1><img src={mits} alt="mits" style={{marginLeft:0,height:'50px',width:'120px'}}/></h1>
-          <Bars/>
-          <NavMenu>
-          <NavLink to="/Home" activeStyle>
-              Home
-            </NavLink>
-            <NavLink to="/QRC" activeStyle>
-              QRCode Scan
-            </NavLink>
-            <NavLink to="/Occupancy" activeStyle>
-              Occupancy
-            </NavLink>
-            <NavLink to="/Complaints" activeStyle>
-              Complaints
-            </NavLink>
-            <NavLink to="/Prices" activeStyle>
-              Check Prices
-            </NavLink>
-            <NavLink to="/Accept" activeStyle>
-              Add User
-            </NavLink>
-            <NavLink to="/Key" activeStyle>
-              Key
-            </NavLink>
-            <NavBtn>
-                <NavBtnLink to='/'>Sign Out</NavBtnLink>
-             </NavBtn>
-          </NavMenu>
-          </NavLink>
-      </Nav>
-    </>
+        <div className='adhorizontal-navbar'>
+          <Link to='/Home'>
+            <h1><img src={mits} alt="mits" className='mits-navbar'/></h1>
+          </Link>
+          <Link to='/Home'><h4 className='adnavbar-link'>ADD DATA</h4></Link>
+          <Link to='/QRC'><h4 className='adnavbar-link'>Scan QR Code</h4></Link>
+          <Link to='/Occupancy'><h4 className='adnavbar-link'>Check Schedules</h4></Link>
+          <Link to='/Complaints'><h4 className='adnavbar-link'>Check Complaints</h4></Link>
+          <Link to='/Accept'><h4 className='adnavbar-link'>New Registrations</h4></Link>
+          <Link to='/Key'><h4 className='adnavbar-link'>Key Requests</h4></Link>
+
+          <Link to='/Prices'><h4 className='adnavbar-link'>Check Prices</h4></Link>
+
+
+
+          <Link to='/'><button onClick={Logout} className='adbutton-navbar'>Sign Out</button></Link>
+
+
+        </div>
+       </>
     );
 };
 
 export default Navbar;
+
+
+
+
