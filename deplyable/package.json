@@ -2,6 +2,7 @@
   "name": "deplyable",
   "version": "0.1.0",
   "private": true,
+  "legacy-peer-deps":true,
   "engines": {
     "npm": "8.9.0",
     "node": "18.2.0"
