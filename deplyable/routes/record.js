@@ -8,7 +8,7 @@ const ObjectId = require("mongodb").ObjectId;
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req,file,cb) => {
-    cb(null, '../public/Uploads/')
+    cb(null, './public/Uploads/')
   },
   filename: (req,file,cb) => {
     cb(null, file.originalname)
@@ -28,7 +28,8 @@ recordRoutes.route("/record/add").post(upload.single('image'),function (req,resp
         image:req.file.originalname,
         Department: req.body.Department,
         RoomNo: req.body.RoomNo,
-        id: req.body.id
+        id: req.body.id,
+        information: req.body.information
     };
     db_connect.collection("facility").insertOne(myobj, function (err,res) {
 

@@ -44,7 +44,7 @@ const Login = (props) => {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch("/record/user");
+     const response = await fetch("http://localhost:5000/record/user");
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;

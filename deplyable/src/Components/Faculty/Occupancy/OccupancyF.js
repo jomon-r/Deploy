@@ -102,7 +102,7 @@ async function onSubmit(e) {
     <NavbarF/></div>
     {(error !== "") ? (<div className='error'>{error}</div>) : ""}
     <Link to="/OccupancyF/Schedules">View SChedules</Link>
-      
+    <div class="bregform"> 
   <h1 style={{backgroundColor: "DodgerBlue"}}>Hall Booking</h1>
   <form onSubmit={onSubmit}>
        <div className="form-group">
@@ -186,7 +186,7 @@ async function onSubmit(e) {
     
        </div>
      </form>
-     
+     </div>
    </div>
    
 

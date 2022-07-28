@@ -36,6 +36,7 @@ const [isShown, setIsShown] = useState(false);
    id: "",
    Department:"",
    RoomNo:"",
+   information:""
    
  });
 
@@ -104,6 +105,7 @@ const makeid = (dep) => {
   newPerson.append("manufdate", form.manufdate)
   newPerson.append("warranty", form.warranty)
   newPerson.append("RoomNo", form.RoomNo)
+  newPerson.append("information",form.information)
   //newPerson.append("", form.)
   //window.alert(form.id)
   await fetch("http://localhost:5000/record/add", {
@@ -230,6 +232,7 @@ const makeid = (dep) => {
            required
          />
        </div>
+
        <label>Additional Information</label>
        <textarea value={form.information} placeholder="Enter additional details" 
        onChange={(e) => updateForm({information : e.target.value})}></textarea><br/>
@@ -301,6 +304,9 @@ const makeid = (dep) => {
       <tr>
         <td><h4>Warranty</h4></td>
         <td><h4> {form.warranty}</h4></td>
+      </tr>
+      <tr>
+        <h4> {form.information}</h4>
       </tr>
      
     </table>
