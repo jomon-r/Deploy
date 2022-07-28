@@ -1,9 +1,42 @@
-button{
-    background-color: aqua;
+.adcomp-body{
+  background-image: url(https://mgmits.ac.in/wp-content/uploads/2019/07/new009.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    display: flex; 
+   
+    justify-content: center; 
+    height:100vh;
+    background-repeat: no-repeat;
+
+    backdrop-filter: blur(8px);
 }
-table, th, td {
-    border: 1px solid;
-  }
-  th, td {
-    padding: 2px;
-  }
+.adcomp-form{
+   width: 1250px;
+    background-color: rgb(0, 0,0,0.8);
+    margin-top: 10px;
+    color: #FFFFFF;
+    /* padding: 10px; */
+    /* height:100vh; */
+    
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+}
+.btn-btn-link{
+  width: 70px;
+    
+  background-color: #107a6a;
+  display: block;
+ 
+  border-radius: 8px;
+  border: 2px solid #366473;
+ 
+  outline: none;
+  color: rgb(8, 1, 1);
+  cursor: pointer;
+  font-size: medium;
+  transition: 5px;
+}
+.btn-btn-linkhover{
+  background-color: aquamarine;
+}

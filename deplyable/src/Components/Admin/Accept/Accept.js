@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
-
+import './accept.css'
 function Accept() {
     const Record = (props) => {
         if(props.record.status !== "Registered"){
@@ -15,7 +15,7 @@ function Accept() {
           <td>{props.record.department}</td>
           <td>{props.record.status}</td>
           
-          <td> <Link className="btn btn-link" to={`/register/${props.record._id}`}>Add user</Link></td>
+          <td> <Link className="user-btn-link" to={`/register/${props.record._id}`}>Add user</Link></td>
           
           </tr>
        
@@ -75,8 +75,11 @@ function Accept() {
       return (
         <div>
           <Navbar/>
-          <h3>User List</h3>
-         <table className="table table-striped" style={{ marginTop: 20 }}>
+          <div className='user-body'>
+            <div className='user-form'>
+          
+          <h1>User Registrations</h1>
+         <table className="user-table-striped" style={{ marginTop: 20 }}>
            <thead>
              <tr>
                   <th>Name</th>
@@ -93,9 +96,9 @@ function Accept() {
     
             </tbody>
     
-         </table> 
+         </table> </div>
+         </div></div>
        
-        </div>
       )
     }
 

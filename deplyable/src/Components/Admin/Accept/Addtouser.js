@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router";
-import { Link } from "react-router-dom";
-import emailjs from "emailjs-com"
 
+import emailjs from "emailjs-com"
+import './adduser.css'
 import Navbar from "../navbar/Navbar";
 
 export default function Addtouser() {
@@ -110,41 +110,48 @@ export default function Addtouser() {
  return (
   
    <div><Navbar/>
-     <h3>Update Role</h3>
+   <div className="adduser-body">
+    <div className="adduser-form">
+         <h1>Add New User</h1><div className="adduser-main">
+    
      <form ref={formm} >
-       <div className="form-group">
-        <label>Email</label> <br />
-      <input type="email" value={form.email} name="mail" /> <br />
-      <label>User Name</label> <br />
-      <input type="text" value={form.username} name="to_name" /> <br />
-      <label>Message</label>
+      
+       <table className="adduser-table"><tr><td>
+        <label>Email</label> </td><td>
+      <input type="email" value={form.email} name="mail" /></td></tr><tr><td>
+      <label>User Name</label> </td><td>
+      <input type="text" value={form.username} name="to_name" /> </td></tr>
+      <tr><td><label>Message</label></td><td>
       <textarea rows={3} cols={30} name="message" value="You are registered successfully. Kindly login with your credentials"/>
-      </div></form>
+      </td></tr>
+      </table></form>
 
         <form>
-         
-         
-         <label htmlFor="status">Role </label>
+         <table className="adduser-table2">
+          <div>
+         <tr><td>
+         <label htmlFor="status" className="labelrole">Role </label></td><td>
         
-      <select name="role" id="role"  value={form.role}
+      <select name="role" className="userrole"  value={form.role}
          onChange={(e) => updateForm({ role: e.target.value })} >
         <option value="" disabled selected>Select a Role</option>
         <option value="Admin">Admin</option>
         <option value="Faculty">Faculty</option>
        
-       </select  >
-       <br />
+       </select  ></td></tr></div>
        
+       <tr>
        <div className="form-group">
          <input
            type="submit"
            value="Update Record"
-           className="btn btn-primary"
+           className="adduser-btn-primary"
            onClick={onSubmit}
          />
-       </div>
+
+       </div></tr>
+       </table>
      </form>
-     <Link to="/Accept">Go Back</Link>
-   </div>
+     </div></div></div></div>
  );
 }

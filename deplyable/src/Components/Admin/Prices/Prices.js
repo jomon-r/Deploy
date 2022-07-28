@@ -8,17 +8,19 @@ function Prices() {
  
  const handleClick = () => {
     url += data
-    window.location.href = url;
+    window.alert('Downloaded csv');
  }
 
   return (
     <div><Navbar/>
-    <br/>
+    <div className='prices-body'>
     <div className='prices-form'>
-    <label>Enter your product name</label>
+      <h1>Check Market Prices</h1>
+      <div className='prices-main'>
+    <label><h2>Enter your product name</h2></label><br/>
     <input type="text" className="price-input" placeholder='Product name' onChange={(e)=> setData(e.target.value)} required/>
-    <input type="button" value="Check Price" onClick={handleClick}/>
-    </div>
+    <input type="button" className='btn-price' value="Check Price" onClick={handleClick}/>
+    </div></div></div>
     </div>
   )
 }

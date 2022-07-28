@@ -140,26 +140,18 @@ const makeid = (dep) => {
  return (
    <div>
     <Navbar/>
-    <Link to="/Details" >View all Facilities</Link>
+    <div className='home-app'>
+    
    
 
-    <div style={{
-             padding:'30px',
-             marginLeft:'40px',
-             flex:1,
-        display:'flex',
-        flexDirection:'column'
-     }}>
+    <div className='home-form'>
       
      <h2>Create New Record<br></br></h2>
-     <div style={{
-      flex:1,
-      display:'flex',
-      flexDirection:'row'
-     }}>
-     <form onSubmit={onSubmit} enctype="multipart/form-data">
-     <div className="form-group">
-     <label htmlFor="type">Type</label>
+     <div className='home-main' >
+     <form onSubmit={onSubmit} enctype="multipart/form-data" className='form-home'>
+      <table className='home-table'>
+     <div className="hform-group"><tr><td>
+     <label htmlFor="type">Type</label></td><td>
         <select name="type" id="type"  value={form.type}
          onChange={(e) => updateForm({ type: e.target.value })}  >
         
@@ -168,47 +160,47 @@ const makeid = (dep) => {
         <option value="Furniture">Furniture</option>
         
        </select  >
-         
+       </td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="name">Name</label>
+       <div className="hform-group"><tr><td>
+         <label htmlFor="name">Name</label></td><td>
          <input
            type="text"
-           className="form-control"
+           className="hform-control"
            id="name"
            value={form.name}
            onChange={(e) => updateForm({ name: e.target.value })}
            required
          />
-
+        </td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="manufdate">Manufacture Date</label>
+       <div className="hform-group"><tr><td>
+         <label htmlFor="manufdate">Manufacture Date</label></td><td>
          <input
            type="date"
-           className="form-control"
+           className="hform-control"
            id="manufdate"
            value={form.manufdate}
            onChange={(e) => updateForm({ manufdate: e.target.value })}
            required
-         />
+         /></td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="warranty">Warranty</label>
+       <div className="hform-group"><tr><td>
+         <label htmlFor="warranty">Warranty</label></td><td>
          <input
            type="date"
-           className="form-control"
+           className="hform-control"
            id="warranty"
            min={form.manufdate}
            value={form.warranty}
            onChange={(e) => updateForm({ warranty: e.target.value })}
            required
-         />
+         /></td></tr>
        </div>
 
       
-       <div className="form-group">
-       <label htmlFor="Department">Department</label>
+       <div className="hform-group"><tr><td>
+       <label htmlFor="Department">Department</label></td><td>
         <select name="Department" id="Department"  value={form.Department}
          onChange={(e) => updateForm({ Department: e.target.value })} >
         <option value="" disabled selected>Select an option</option>
@@ -219,64 +211,71 @@ const makeid = (dep) => {
         <option value="ME">ME</option>
         <option value="Basic Science">Basic Science</option>
        </select  >
-         
+       </td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="RoomNo">Room Number</label>
+       <div className="hform-group"><tr><td>
+         <label htmlFor="RoomNo">Room Number</label></td><td>
          <input
            type="text"
-           className="form-control"
+           className="hform-control"
            id="RoomNo"
            value={form.RoomNo}
            onChange={(e) => updateForm({ RoomNo: e.target.value })}
            required
-         />
+         /></td></tr>
        </div>
-
-       <label>Additional Information</label>
+       <div className="hform-group"><tr><td>
+       <label>Additional Information</label></td><td>
        <textarea value={form.information} placeholder="Enter additional details" 
-       onChange={(e) => updateForm({information : e.target.value})}></textarea><br/>
-       <label htmlFor="bill">Upload Bill Details</label>
+       onChange={(e) => updateForm({information : e.target.value})}></textarea></td></tr>
+       <tr><td>
+       
+       <label htmlFor="bill">Upload Bill Details</label></td><td>
        <input
           type="file"
           //value={selectedFile}
           onChange={onChangeFile}
-        />
+        /></td></tr>
+        </div>
 
-       <div className="form-group">
+       <div className="hform-group"><tr>
          <input
            type="submit"
            value="Generate QR"
-           className="btn-primary"
+           className="hbtn-primary"
          />
-    
+
+    </tr>
        </div>
+       <div className='hform-group'><tr>
+      
+       <Link to="/Details"><input
+           type="submit"
+           value="View all Facilities"
+           className="hbtn-primary"
+         /></Link></tr>
+       </div></table>
      </form>
      
-     
+     </div></div>
      
            
    
     {isShown &&    (
       <>
-      <div style={{
-        marginTop:'50px',
-        marginLeft:'150px'
-     }}>
-       <div >
+      <div className='qrc-top'>
+      <div className='qrc-top2'>
+       <div className='qrc-image'>
 
        {imageUrl ? (
              <a href={imageUrl} download>
             <img src={imageUrl} alt="img" />
               </a>) : null} 
                <h6>To Download click on QR code</h6> 
-      </div></div>
-    <div style={{
-    marginTop: '250px',
-    marginLeft: '100px'
-  }}>
-
-    <table>
+      </div>
+    <div className='qrc-table'>
+        <h1>Add Details</h1>
+    <table className='table-data'>
       <tr>
         <td><h4>ID</h4></td>
         <td><h4> {form.id}</h4></td>
@@ -311,10 +310,10 @@ const makeid = (dep) => {
      
     </table>
     <form onSubmit={addData}>
-        <input type="submit" value="Add Data"/>
-    </form>
-  </div> </>)}
-  </div></div>
+        <input type="submit" className="hbtn-primary" value="Add Data"/>
+    </form></div>
+  </div></div> </>)}
+  </div>
    </div>
  );
 }

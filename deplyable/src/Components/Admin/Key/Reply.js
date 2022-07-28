@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+
 import emailjs from "emailjs-com"
+import './repkey.css'
+import Navbar from "../navbar/Navbar";
 export default function Edit() {
  const [form, setForm] = useState({
    email:"",
@@ -91,35 +93,40 @@ export default function Edit() {
  
  return (
    <div>
-     <h3>Update Record</h3>
+    <Navbar/>
+    <div className="editcomp-body">
+    <div className="editcomp-form">
+         <h1>Reply To Request</h1>
+         <div className="editcomp-main">
      <form ref={formm} onSubmit={onSubmit}>
-     <label>Requester Email</label> <br />
-      <input type="email" name="mail" value={form.email} readOnly/>
-      <label>Requester Name</label> <br />
-      <input type="text" name="to_name" value={form.name} readOnly/>
+     
+      <table className="repkey-table"><div className="form-group"><tr><td>
       
+     <label>Requester Email</label> </td><td>
+      <input type="email" name="mail" value={form.email} readOnly/></td></tr></div>
+      <div className="form-group"><tr><td><label>Requester Name</label> </td><td>
+      <input type="text" name="to_name" value={form.name} readOnly/></td></tr>
+      </div>
          <div className="form-group">
-         <label htmlFor="status">Add Reply </label>
+         <tr><td><label htmlFor="status">Add Reply </label></td><td>
          <textarea
            className="form-control"
            id="status"
            name="message"
            value={form.comments}
            onChange={(e) => updateForm({ comments: e.target.value })}
-         />
+         /></td></tr>
        </div>
-       <br />
- 
-       <div className="form-group">
-         <input
-           type="submit"
-           value="Update Record"
-           className="btn btn-primary"
+       
+ <tr>
+      
+         <button
+           className="reply-primary"
            onClick={onSubmit}
-         />
-       </div>
+         >Send Reply</button>
+       </tr></table>
      </form>
-     <Link to="/Complaints">Go Back</Link>
-   </div>
+   
+   </div></div></div></div>
  );
 }

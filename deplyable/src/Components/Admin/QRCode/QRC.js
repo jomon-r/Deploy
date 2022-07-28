@@ -18,7 +18,8 @@ function QRC() {
       department:"",
       roomno:"",
       id:"",
-      image:""
+      image:"",
+      information:""
     }
     const getData = () => {
       for(var key in records){
@@ -31,6 +32,7 @@ function QRC() {
           item.department = records[key].Department
           item.roomno = records[key].RoomNo
           item.image = records[key].image
+          item.information = records[key].information
           break;
         }
      
@@ -40,22 +42,30 @@ function QRC() {
     }
     const printdata = () =>{
       return(
-        <><label htmlFor='ID'>ID of the Product :</label>
-        <input type="text" value={item.id} className="id" readOnly />
-        <label htmlFor='type'>Type :</label>
-        <input type="text" value={item.type} className="id" readOnly />   
-        <label htmlFor='name'>Name :</label>
-        <input type="text" value={item.name} className="id" readOnly /> 
-        <label htmlFor='manufdate'>Manufacture :</label>
-        <input type="text" value={item.manufdate} className="id" readOnly />   
-        <label htmlFor='Warranty'>Warranty :</label>
-        <input type="text" value={item.warranty} className="id" readOnly /> 
-        <label htmlFor='Department'>Department :</label>
-        <input type="text" value={item.department} className="id" readOnly />
-        <label htmlFor='roomno'>Room No :</label>
-        <input type="text" value={item.roomno} className="id" readOnly />
-        <img src={`../../../../Uploads/${item.image}`} alt="jnjfdkl"/>
-                  </>
+        <div className='scanresult-table'>
+          <h1>PRODUCT DETAILS</h1>
+          <div className='scanresult-intable'>
+            <table className='scan-table'><tr><td>
+        <label htmlFor='ID'>ID of the Product </label></td><td>
+        <input type="text" value={item.id} className="id" readOnly /></td></tr>
+        <tr><td><label htmlFor='type'>Type </label></td><td>
+        <input type="text" value={item.type} className="id" readOnly /> </td></tr>
+        <tr><td><label htmlFor='name'>Name </label></td><td>
+        <input type="text" value={item.name} className="id" readOnly /> </td></tr>
+        <tr><td><label htmlFor='manufdate'>Manufacture </label></td><td>
+        <input type="text" value={item.manufdate} className="id" readOnly /> </td></tr> 
+        <tr><td><label htmlFor='Warranty'>Warranty </label></td><td>
+        <input type="text" value={item.warranty} className="id" readOnly /></td></tr>
+        <tr><td><label htmlFor='Department'>Department :</label></td><td>
+        <input type="text" value={item.department} className="id" readOnly /></td></tr>
+        <tr><td><label htmlFor='roomno'>Room No </label></td><td>
+        <input type="text" value={item.roomno} className="id" readOnly /></td></tr>
+        <tr><td><label htmlFor='information'>Additional information </label></td><td>
+        <textarea value={item.information} className="id" readOnly ></textarea></td></tr>
+        <tr></tr><tr> <img src={`../../../../Uploads/${item.image}`} className='bill-pic' alt="BILL"/></tr>
+        </table>
+        
+        </div></div>
       )
     }
     const handleScan = data => {
@@ -105,11 +115,11 @@ function QRC() {
         <Navbar/>
             
             
-            
-      <div className='div2'>
+        <div className='div2-qrc'>
    
-      <div className='div3'>
-      <button onClick={handleClick} className="btn">Scan</button>
+   <div className='div3-qrc'>
+     <div className='div4-qrc'>
+      <button onClick={handleClick} className="btn-qrcs">Scan</button>
       {isShown && (
     <div>
       <QrReader
@@ -133,13 +143,15 @@ function QRC() {
     <input type="text" value={data} className="id" onChange={getData()} readOnly/>
     <label htmlFor='ID'>Search by ID:</label>
     <input type="text" value={data} className="id" onChange={(e) => {setData(e.target.value);getData();}} />
-    <button onClick={handleCli} className="btn">Show Details</button>
+    <button onClick={handleCli} className="btn-qrcs">Show Details</button>
     </div>
   )}
 
   
   
+</div>
   </div>
+          
              
             
   {isShn && (      

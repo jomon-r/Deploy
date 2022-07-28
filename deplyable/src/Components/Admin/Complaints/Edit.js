@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com"
+import Navbar from '../navbar/Navbar'
+import './editcomp.css'
 export default function Edit() {
  const [form, setForm] = useState({
    status: "",
@@ -91,38 +93,44 @@ export default function Edit() {
  
  return (
    <div>
-     <h3>Update Record</h3>
+    <Navbar/>
+   <div className="editcomp-body">
+    <div className="editcomp-form">
+         <h1>Update Record</h1><div className="editcomp-main">
      <form ref={formm}>
-     <label>Complainant Email</label> <br />
-      <input type="email" name="mail" value={form.complainantemail} readOnly/>
-      <label>Complainant Name</label> <br />
-      <input type="text" name="to_name" value={form.complainantname} readOnly/>
-      <label>Message</label>
+      <table className="editcomp-table"><tr><td>
+     <label>Complainant Email</label> </td><td>
+      <input type="email" name="mail" value={form.complainantemail} readOnly/></td></tr>
+      <tr><td><label>Complainant Name</label> </td><td>
+      <input type="text" name="to_name" value={form.complainantname} readOnly/></td></tr>
+      <tr><td><label>Message</label> </td><td>
       <textarea rows={3} cols={30} name="message" value="Your complaint status have been updated. Kindly check it in the site by logging in"/>
-     </form>
-     <form onSubmit={onSubmit}>
-       <div className="form-group">
-         <label htmlFor="status">Status: </label>
+      </td></tr></table></form>
+     <form onSubmit={onSubmit}><table className="editcomp-table">
+       <div><tr><td>
+         <label htmlFor="status">Status </label></td><td>
          <input
            type="text"
-           className="form-control"
+           className="eform-control"
            id="status"
            value={form.status}
            onChange={(e) => updateForm({ status: e.target.value })}
-         />
+         /></td></tr>
        </div>
-       <br />
+       
  
-       <div className="form-group">
+       <div className="form-group"><tr>
          <input
            type="submit"
            value="Update Record"
-           className="btn btn-primary"
+           className="btn-ebtn-primary"
            onClick={onSubmit}
-         />
+         /></tr>
        </div>
+       </table>
      </form>
-     <Link to="/Complaints">Go Back</Link>
+     </div>
+   </div></div>
    </div>
  );
 }

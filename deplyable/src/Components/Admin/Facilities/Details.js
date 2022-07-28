@@ -12,6 +12,7 @@ const Record = (props) => (
       <td>{props.record.warranty}</td>
       <td>{props.record.Department}</td>
       <td>{props.record.RoomNo}</td>
+      <td>{props.record.information}</td>
       
      
       
@@ -96,8 +97,13 @@ function Details() {
 
   return (
     <div><Navbar/>
+    <div className='details-body'>
+      <div className='details-form'>
+        <h1>View All Equipments</h1>
+        <div className='details-main'>
 
-    <label>View by type</label>
+    <table><tr><td>
+    <label>View by type</label></td><td>
     
     <select  onChange={(e) => setData(e.target.value)}>
      <option value="" disabled selected>Choose an Option</option>
@@ -105,8 +111,9 @@ function Details() {
      <option value="Furniture">Furniture</option>
      <option value="Electronics">Electronics</option>
      
-   </select>
-   <label>View by Department</label>
+   </select></td></tr>
+   <tr><td>
+   <label>View by Department</label></td><td>
    <select  onChange={(e) => setDep(e.target.value)}>
      <option value="" disabled selected>Choose an Option</option>
      <option value="All">All</option>
@@ -118,12 +125,15 @@ function Details() {
      <option value="Basic Science">Basic Science</option>
      
    </select>
-
-
-    <button onClick={handleClick} className="btn">Show</button>
+   </td></tr>
+<tr>
+    <button onClick={handleClick} className="detbtn">Show</button></tr>
+    
+    </table>
      {isShown && (
 
    <div>
+    
     <h3>List of Details</h3>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>
@@ -136,6 +146,7 @@ function Details() {
               <th>Warranty</th>
               <th>Department</th>
               <th>Room No</th>
+              <th>Information</th>
               
              
 
@@ -147,6 +158,9 @@ function Details() {
         </tbody>
      </table> </div>
      )} 
+     </div>
+      </div>
+    </div>
      </div>
   )
 }

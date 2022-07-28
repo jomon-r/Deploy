@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import NavbarF from '../navbar/NavbarF';
+import './schedule.css'
 const Record = (props) => (
    
   <tr>
@@ -79,16 +80,17 @@ function SchedulesF() {
   return (
     
     <div><NavbarF/>
-
+    <div className='schedule-form'>
+    <div className='schedule-label'>
     <label>Choose the Date</label>
     <input type="date" value={date} onChange={(e) => setDate(e.target.value)}></input>
-
-    <button onClick={handleClick} className="btn">Show</button>
+   
+    <button onClick={handleClick} className="btn-schedule">Show</button> 
      {isShown && (
 
-   <div>
+   <div className='schedules-table'>
     <h3>Schedule List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
+     <table className="schedule-table-striped" >
        <thead>
          <tr>
               
@@ -108,8 +110,8 @@ function SchedulesF() {
 
         </tbody>
      </table> </div>)}
-     {nothing()}
-    </div>
+     {nothing()}</div>
+    </div> </div>
   )
 }
 

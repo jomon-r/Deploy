@@ -1,4 +1,4 @@
-.prices-body{
+.comp-body{
     background-image: url(https://mgmits.ac.in/wp-content/uploads/2019/07/new009.jpg);
     background-position: center;
     background-size: cover;
@@ -11,43 +11,57 @@
 
     backdrop-filter: blur(8px);
 }
-.prices-form{
-  width: 600px;
-    background-color: rgb(0, 0,0,0.8);
-    margin-top: 30px;
+
+.comp-form{
+    width: 600px;
+    background-color: rgb(0, 0,0,0.6);
+    margin: auto;
     color: #FFFFFF;
-    /* padding: 10px; */
-    height:400px;
-    
+    padding: 10px 0px 10px 0px;
+    /* margin-top: 10px; */
     text-align: center;
     border-radius: 15px 15px 15px 15px;
+    /* display: flex;
+    flex-direction: row; */
 }
-.prices-main{
+
+.comp-table td,tr,table{
+    border:none !important;
+}
+.cmain{
     background-color: rgb(0, 0,0,0.5);
     width: 550px;
-    margin: 35px; 
-    padding: 25px;
+    margin: 20px;
+    padding-left: 8px;
     border-radius: 15px 15px 15px 15px;
-    margin-bottom: 20px;
+
 }
-.btn-schedule{
-    width: 350px;
+.comp-form label,input,select{
+    width:250px;
+    height:36px
+}
+.comp-form input{
+    background-color: #FFFFFF;
+}
+
+.comp-form .cbtn-primary{
     
+    width: 400px;
+    margin-left: 80px;
     background-color: #107a6a;
     display: block;
-   
+    /* margin: 20px 0px 0px 20px; */
+    text-align: center;
     border-radius: 12px;
     border: 2px solid #366473;
-    height:40px;
+    /* padding: 14px 110px; */
     outline: none;
     color: rgb(8, 1, 1);
     cursor: pointer;
     font-size: large;
     transition: 25px;
-    margin-left:100px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    
 }
-.btn-schedule:hover{
+.cbtn-primary:hover{
     background-color: aquamarine;
 }

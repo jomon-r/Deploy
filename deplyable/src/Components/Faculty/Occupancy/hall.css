@@ -1,0 +1,170 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+.body-hall{
+    background-image: url(https://mgmits.ac.in/wp-content/uploads/2019/07/new009.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    /* margin-top: 40px; */
+
+}
+.bregform
+{
+    width: 600px;
+    background-color: rgb(0, 0,0,0.6);
+    margin: auto;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    /* margin-top: 10px; */
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+
+.hall-table td,tr,table{
+    border:none !important;
+}
+ .bmane{
+    background-color: rgb(0, 0,0,0.5);
+    width: 550px;
+    margin: 20px;
+    padding-top: 20px;
+    padding-left: 9px;
+
+}
+.bregform label,input,select{
+    width:250px;
+    height:36px
+}
+.bregform input{
+    background-color: #FFFFFF;
+}
+/* .bform-group{
+    display: flex;
+    flex:2;
+    flex-direction: row;
+}  */
+/*
+form{
+   
+    padding: 40px;
+}
+
+
+
+
+ #bname{
+    width: 100%;
+    height: 100px;
+}
+.bname{
+     margin-left:25px;
+    margin-top:30px;
+    width: 125px; 
+    color: rgb(239, 238, 244);
+    font-size: 18px;
+    font-weight: 700;
+    
+    
+}
+.bselect{
+    position: relative;
+    left: 200px;
+    height: 40px;
+    width: 400px; 
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    outline: none;
+    overflow: hidden;
+}
+.bselect bselect{
+    font-size: 20px;
+}
+.bdepartmentsub{
+    position: relative;
+    left: 90px;
+    height: 40px;
+    width: 400px; 
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    outline: none;
+    overflow: hidden;
+}
+.bdepartmentsub bdepartmentsub{
+    font-size: 20px;
+}
+.bclassnamesub{
+    position: relative;
+     left: 150px;
+    
+    width: 350px; 
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+
+}
+.bdate{
+    position: relative;
+    /* left: 183px;
+    height: 40px;
+    width: 350px; 
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+.btime{
+    position: relative;
+    /* left: 130px;
+    
+    width: 350px; 
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+}
+.btotime{
+    position: relative;
+    /* left: 270px;
+    
+    width: 353px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+} */
+.bregform .btn-primary{
+    
+    width: 400px;
+    margin-left: 80px;
+    background-color: #107a6a;
+    display: block;
+    /* margin: 20px 0px 0px 20px; */
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #366473;
+    /* padding: 14px 110px; */
+    outline: none;
+    color: rgb(8, 1, 1);
+    cursor: pointer;
+    font-size: large;
+    transition: 25px;
+    
+}
+.btn-primary:hover{
+    background-color: aquamarine;
+}
+/* #bname{
+    width: 100%;
+    height: 80px;
+} */ 

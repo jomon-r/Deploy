@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/Navbar'
-
+import './rekey.css'
 
 function Key() {
     const Record = (props) => {
@@ -23,7 +23,7 @@ function Key() {
           <td>{props.record.reason}</td>
           {/* <td > <input type="text" /></td> */}
           <td>{props.record.comments}</td>
-          <td> <Link className="btn btn-link" to={`/Key/${props.record._id}`}>Send Reply</Link></td>
+          <td> <Link className="rekey-link" to={`/Key/${props.record._id}`}>Send Reply</Link></td>
           
           </tr>
        
@@ -80,8 +80,10 @@ function Key() {
       return (
         <div>
           <Navbar/>
-          <h3>Complaint List</h3>
-         <table className="table table-striped" style={{ marginTop: 20 }}>
+          <div className='rekey-body'>
+            <div className='rekey-form'>
+            <h1>Key Requests</h1>
+         <table className="rekey-striped" >
            <thead>
              <tr>
                   <th>Email</th>
@@ -108,7 +110,8 @@ function Key() {
     
          </table> 
        
-        </div>
+        </div></div>
+          </div>
       )
     }
 

@@ -1,10 +1,8 @@
-
-import NavbarG from '../navbar/NavbarG'
 import React, {useState,useEffect} from 'react'
-
+import './qrcg.css'
 
 import {QrReader} from 'react-qr-reader'
-
+import NavbarG from '../navbar/NavbarG'
 function QRCG() {
     const [data, setData] = useState('No result');
     //const [qrscan, setQrscan] = useState('No result');
@@ -20,19 +18,19 @@ function QRCG() {
       department:"",
       roomno:"",
       id:"",
-      image:""
+      image:"",
+      information:""
     }
     const getData = () => {
       for(var key in records){
         if(records[key].id === data){
           item.type = records[key].type;
           item.id = records[key].id;
-         
-         
+       
           item.name = records[key].name
           item.department = records[key].Department
           item.roomno = records[key].RoomNo
-          
+       
           break;
         }
      
@@ -42,20 +40,25 @@ function QRCG() {
     }
     const printdata = () =>{
       return(
-        <><label htmlFor='ID'>ID of the Product :</label>
-        <input type="text" value={item.id} className="id" readOnly />
-        <label htmlFor='type'>Type :</label>
-        <input type="text" value={item.type} className="id" readOnly />   
-        <label htmlFor='name'>Name :</label>
-        <input type="text" value={item.name} className="id" readOnly /> 
-   
-   
-        <label htmlFor='Department'>Department :</label>
-        <input type="text" value={item.department} className="id" readOnly />
-        <label htmlFor='roomno'>Room No :</label>
-        <input type="text" value={item.roomno} className="id" readOnly />
+        <div className='scanresult-table'>
+          <h1>PRODUCT DETAILS</h1>
+          <div className='scanresult-intable'>
+            <table className='scan-table'><tr><td>
+        <label htmlFor='ID'>ID of the Product </label></td><td>
+        <input type="text" value={item.id} className="id" readOnly /></td></tr>
+        <tr><td><label htmlFor='type'>Type </label></td><td>
+        <input type="text" value={item.type} className="id" readOnly /> </td></tr>
+        <tr><td><label htmlFor='name'>Name </label></td><td>
+        <input type="text" value={item.name} className="id" readOnly /> </td></tr>
       
-                  </>
+        <tr><td><label htmlFor='Department'>Department :</label></td><td>
+        <input type="text" value={item.department} className="id" readOnly /></td></tr>
+        <tr><td><label htmlFor='roomno'>Room No </label></td><td>
+        <input type="text" value={item.roomno} className="id" readOnly /></td></tr>
+       
+        </table>
+        
+        </div></div>
       )
     }
     const handleScan = data => {
@@ -105,11 +108,11 @@ function QRCG() {
         <NavbarG/>
             
             
-            
-      <div className='div2'>
+        <div className='div2-qrc'>
    
-      <div className='div3'>
-      <button onClick={handleClick} className="btn">Scan</button>
+   <div className='div3-qrc'>
+     <div className='div4-qrc'>
+      <button onClick={handleClick} className="btn-qrcs">Scan</button>
       {isShown && (
     <div>
       <QrReader
@@ -133,13 +136,15 @@ function QRCG() {
     <input type="text" value={data} className="id" onChange={getData()} readOnly/>
     <label htmlFor='ID'>Search by ID:</label>
     <input type="text" value={data} className="id" onChange={(e) => {setData(e.target.value);getData();}} />
-    <button onClick={handleCli} className="btn">Show Details</button>
+    <button onClick={handleCli} className="btn-qrcs">Show Details</button>
     </div>
   )}
 
   
   
+</div>
   </div>
+          
              
             
   {isShn && (      
@@ -151,3 +156,4 @@ function QRCG() {
   }
   
   export default QRCG;
+

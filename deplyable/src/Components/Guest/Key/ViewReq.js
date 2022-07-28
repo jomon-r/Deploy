@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 
 import { retGuest } from '../Guest';
 import NavbarG from '../navbar/NavbarG';
-
+import './viewkey.css'
 
 
 function ViewReq() {
@@ -72,9 +72,10 @@ function ViewReq() {
   return (
     <div>
       <NavbarG/>
-     
+      <div className='viewkey-body'>
+        <div id='viewkey-div'>
       <h3>Requests</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
+     <table id="key-table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>
               <th>Name</th>
@@ -96,7 +97,7 @@ function ViewReq() {
         </tbody>
 
      </table> 
-   
+   </div></div>
     </div>
   )
 }

@@ -25,7 +25,7 @@ function Complaints() {
       <td>{props.record.remarks}</td>
       <td>{props.record.status}</td>
       {/* <td > <input type="text" /></td> */}
-      <td> <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link></td>
+      <td> <Link className="btn-btn-link" to={`/edit/${props.record._id}`}>Edit</Link></td>
       
       </tr>
    
@@ -82,8 +82,10 @@ function Complaints() {
   return (
     <div>
       <Navbar/>
-      <h3>Complaint List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
+      <div className='adcomp-body'>
+        <div className='adcomp-form'>
+      <h1>Complaint List</h1>
+     <table className="adcomp-table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>
               <th>ID</th>
@@ -107,7 +109,8 @@ function Complaints() {
         </tbody>
 
      </table> 
-   
+     </div>
+      </div>
     </div>
   )
 }

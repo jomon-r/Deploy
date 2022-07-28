@@ -1,4 +1,4 @@
-.details-body{
+.editcomp-body{
     background-image: url(https://mgmits.ac.in/wp-content/uploads/2019/07/new009.jpg);
     background-position: center;
     background-size: cover;
@@ -6,31 +6,31 @@
     display: flex; 
    
     justify-content: center; 
-    height:130vh;
+    height:98vh;
     background-repeat: no-repeat;
 
     backdrop-filter: blur(8px);
 }
-.details-form{
-  width: 1200px;
+.editcomp-form{
+    width: 700px;
     background-color: rgb(0, 0,0,0.8);
     margin-top: 10px;
     color: #FFFFFF;
-    /* padding: 10px; */
-    height:128vh;
+    padding: 10px;
+    height:96vh;
     
     text-align: center;
     border-radius: 15px 15px 15px 15px;
 }
-.details-main{
-  background-color: rgb(0, 0,0,0.5);
-    width: 1150px;
-    margin: 25px; 
-    /* padding-left: 8px; */
+.editcomp-main{
+    background-color: rgb(0, 0,0,0.5);
+    width: 600px;
+    margin: 35px; 
+    padding-left: 8px;
     border-radius: 15px 15px 15px 15px;
 }
-.detbtn{
-    width: 150px;
+.btn-ebtn-primary{
+    width: 350px;
     
     background-color: #107a6a;
     display: block;
@@ -43,7 +43,18 @@
     cursor: pointer;
     font-size: large;
     transition: 25px;
+    margin-left:150px;
+    margin-top: 30px;
 }
-.detbtn:hover{
-  background-color: aquamarine;
+.btn-ebtn-primary:hover{
+    background-color: aquamarine;
+}
+.editcomp-table textarea{
+    height: 80px;
+}
+.editcomp-table input,label,textarea{
+    width:300px;
+}
+.eform-control{
+    margin-left: 100px;
 }

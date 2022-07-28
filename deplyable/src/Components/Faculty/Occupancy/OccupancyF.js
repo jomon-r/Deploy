@@ -1,7 +1,7 @@
 import React,{ useState,useEffect } from 'react'
 import { retPersonEmail, retPersonName } from '../../../Login/Login';
 import NavbarF from '../navbar/NavbarF'
-
+import './hall.css'
 import { Link } from 'react-router-dom';
 function OccupancyF()
  {
@@ -98,16 +98,22 @@ async function onSubmit(e) {
       display:'flex',
       flexDirection:'column', 
     }}>
-      <div style={{marginTop:0}}>
-    <NavbarF/></div>
+     
+    <NavbarF/><div className='body-hall'>
     {(error !== "") ? (<div className='error'>{error}</div>) : ""}
-    <Link to="/OccupancyF/Schedules">View SChedules</Link>
+    
     <div class="bregform"> 
-  <h1 style={{backgroundColor: "DodgerBlue"}}>Hall Booking</h1>
+  <h1>Hall Booking</h1>
+  
+ 
+  <div className='bmane'>
   <form onSubmit={onSubmit}>
-       <div className="form-group">
-       <label htmlFor="Hall">Select Hall</label>
-        <select name="room" id="room-select"  value={form.hall}
+  <table className='hall-table'>
+        
+        <div id="bname">
+        <tr>
+     <td>   <label htmlFor="Hall" className='bname'>Select Hall</label></td>
+       <td><select name="room" id="room-select" className='bselect' value={form.hall}
          onChange={(e) => updateForm({ hall: e.target.value })} placeholder="-Please choose an option-" required>
         <option value="" disabled selected>Select an option</option>
         <option value="Albert Einstein Hall">Albert Einstein Hall</option>
@@ -116,11 +122,12 @@ async function onSubmit(e) {
         <option value="Steve Jobs Hall">Steve Jobs Hall</option>
         <option value="Visheshwarya Hall">Visheshwarya Hall</option>
         <option value="Dijkstra Lab">Dijkstra Lab</option>
-       </select  >
-        </div>
-       <div className="form-group">
-         <label htmlFor="department">Select Your Department</label>
-         <select name="department" id="dep-select"  value={form.department}
+       </select  ></td></tr>
+        </div><br/>
+        <div className="form-group" id="bname"> <tr>
+     <td>
+        <label htmlFor="department" className='bname'>Select Your Department</label></td><td>
+         <select name="department" id="dep-select" className='bdepartmentsub' value={form.department}
          onChange={(e) => updateForm({ department: e.target.value })} placeholder="-Please choose ypur department-" required>
         <option value="" disabled selected>Select an option</option>
         <option value="CSE">CSE</option>
@@ -129,67 +136,82 @@ async function onSubmit(e) {
         <option value="CE">CE</option>
         <option value="ME">ME</option>
         <option value="Basic Science">Basic Science</option>
-       </select  >
+       </select  ></td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="class">Enter your Class</label>
+       
+       <div className="bform-group" id="bname"><tr>
+     <td>
+       <label htmlFor="class" className='bname'>Enter your Class</label></td><td>
          <input
            type="text"
-           className="form-control"
+           className="bclassnamesub"
            id="class"
            value={form.class}
            onChange={(e) => updateForm({ class: e.target.value })}
            required
-         />
+         /></td>
+         </tr>
        </div>
 
-       <div className="form-group">
-         <label htmlFor="date">Choose Date</label>
+       <div className="bform-group" id="bname"><tr>
+     <td>
+       <label htmlFor="date" className='bname'>Choose Date</label></td><td>
          <input
            type="date"
-           className="form-control"
+           className="bdate"
            id="date"
            value={form.date}
            onChange={(e) => updateForm({ date: e.target.value })}
            required
-         />
+         /></td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="roomno">Choose From Time</label>
-         <input
+       <div className="bform-group" id="bname"><tr>
+     <td>
+       <label htmlFor="roomno" className='bname'>From</label></td><td>
+                 <input
            type="time"
-           className="time"
+           className="btime"
            min="09:00" max="18:00" required value={form.fromtime}
            onChange={(e) => updateForm({fromtime: e.target.value })}
         
-         />
+         /></td></tr>
        </div>
-       <div className="form-group">
-         <label htmlFor="roomno">To</label>
+       <div className="bform-group" id="bname"><tr>
+     <td>
+       <label htmlFor="roomno" className='bname'>To</label></td><td>
          <input
            type="time"
-           className="totime"
+           className="btotime"
            min={form.fromtime} max="18:00" required value={form.totime}
            onChange={(e) => updateForm({totime: e.target.value })}
         
-         />
+         /></td></tr>
        </div>
       
        
 
-       <div className="form-group">
+       <div className="bform-group"><tr>
          <input
            type="submit"
            value="Schedule Your Hall"
            className="btn-primary"
          />
-    
+    </tr>
        </div>
-     </form>
-     </div>
+       <div className="bform-group"><tr>
+       <Link to="/OccupancyF/Schedules"><input
+           type="submit"
+           value="View Schedules"
+           className="btn-primary"
+         /></Link>
+       </tr></div>
+       </table>
+       
+     </form></div></div>
+     
    </div>
    
-
+</div>
  
 
   );

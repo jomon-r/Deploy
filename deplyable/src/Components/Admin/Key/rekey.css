@@ -1,4 +1,4 @@
-.details-body{
+.rekey-body{
     background-image: url(https://mgmits.ac.in/wp-content/uploads/2019/07/new009.jpg);
     background-position: center;
     background-size: cover;
@@ -6,30 +6,24 @@
     display: flex; 
    
     justify-content: center; 
-    height:130vh;
+    height:100vh;
     background-repeat: no-repeat;
 
     backdrop-filter: blur(8px);
 }
-.details-form{
-  width: 1200px;
+.rekey-form{
+  width: 1250px;
     background-color: rgb(0, 0,0,0.8);
-    margin-top: 10px;
+    margin-top: 30px;
     color: #FFFFFF;
-    /* padding: 10px; */
-    height:128vh;
+    padding: 10px;
+    height:98vh;
     
     text-align: center;
     border-radius: 15px 15px 15px 15px;
 }
-.details-main{
-  background-color: rgb(0, 0,0,0.5);
-    width: 1150px;
-    margin: 25px; 
-    /* padding-left: 8px; */
-    border-radius: 15px 15px 15px 15px;
-}
-.detbtn{
+
+.rekey-link{
     width: 150px;
     
     background-color: #107a6a;
@@ -44,6 +38,6 @@
     font-size: large;
     transition: 25px;
 }
-.detbtn:hover{
+.rekey-link:hover{
   background-color: aquamarine;
 }

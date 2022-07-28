@@ -3,7 +3,7 @@ import { retPersonEmail } from '../../../Login/Login';
 import NavbarF from '../navbar/NavbarF'
 
 
-
+import './viewcomp.css'
 function ViewComp() {
 
    const email = retPersonEmail()
@@ -79,8 +79,10 @@ function ViewComp() {
   return (
     <div>
       <NavbarF/>
+      <div className='viewcomp-body'>
+        <div className='viewcomp-div'>
       <h3>Complaint List</h3>
-     <table className="table table-striped" style={{ marginTop: 20 }}>
+     <table className="comp-table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>
               <th>ID</th>
@@ -101,8 +103,8 @@ function ViewComp() {
 
         </tbody>
 
-     </table> 
-   
+     </table> </div>
+     </div>
     </div>
   )
 }
